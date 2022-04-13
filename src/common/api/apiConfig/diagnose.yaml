@@ -1,0 +1,67 @@
+###############################################################################
+#
+#  全景图-网络拓扑 Api
+#
+###############################################################################
+# @description: 连通性检测
+/connect_detect:
+  url: /v1/security-diagnose/
+  method: get
+  apitype: diagnose
+  comment: 获取ip连通性检测数据
+
+# 获取两云服务器(ip)之间的逻辑拓扑路径
+/logicTopo/vmToVm:
+  apitype: diagnose
+  url: /v1/logic-topologies/
+  method: get
+  comment: 获取两云服务器(IP)之间的逻辑拓扑路径
+
+# 获取两云服务器之间的虚拟拓扑路径
+/virtualTopo/vmToVm:
+  apitype: diagnose
+  url: /v1/virtual-topologies/
+  method: get
+  comment: 获取两云服务器(IP)之间的虚拟拓扑路径
+
+# 获取linux br acls
+/br/acls:
+  apitype: diagnose
+  url: /v1/virtual-network/acls/
+  method: get
+  comment: 获取linux br acl
+
+# 获取ovs br 流表
+/br/flow-tables:
+  apitype: diagnose
+  url: /v1/virtual-network/flow-tables/
+  method: get
+  comment: 获取ovs 流表
+
+# 读取物理接口流量信息
+/nic/flow:
+  apitype: diagnose
+  url: /v1/virtual-network/flow/
+  method: get
+  comment: 获取接口流量信息
+
+# 获取虚拟网络中物理网卡和vtap接口的流量信息
+/netCard/flow:
+  apitype: diagnose
+  url: /v1/virtual-network/flow-detail/
+  method: get
+  comment: 获取网卡流量信息
+
+# IP查寻对应虚拟网络虚机
+/vmCheck/ip:
+  apitype: diagnose
+  url: /v1/virtual-network/ip-info/
+  method: get
+  comment: IP查寻对应虚拟网络虚机
+
+# 获取动态转发表信息
+/virtual/dynamic-table:
+  apitype: diagnose
+  url: /v1/virtual-network/dynamic-forward-table/
+  method: get
+  comment: 获取动态转发表信息

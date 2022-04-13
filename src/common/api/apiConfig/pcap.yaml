@@ -1,0 +1,48 @@
+##############################################################################
+#
+# 全景图-流量下载-pcap Api
+#
+###############################################################################
+
+/pcap-policies:
+  apitype: pcap
+  url: /v1/pcap-policies/
+  method: get
+  comment: 获取诊断pcap策略列表
+
+/pcap-policies/delete:
+  apitype: pcap
+  url: /v1/pcap-policies/<lcuuid>/
+  method: delete
+  comment: 删除诊断pcap策略规则
+
+/pcap-policies/create:
+  apitype: pcap
+  url: /v1/pcap-policies/
+  method: post
+  comment: 新增诊断pcap策略规则
+
+/pcap-policies/update:
+  apitype: pcap
+  url: /v1/pcap-policies/<lcuuid>/
+  method: patch
+  comment: 修改分发策略规则
+
+/pcap-files:
+  apitype: pcap
+  url: /v1/pcaps/
+  method: get
+  comment: 获取诊断pcap文件列表
+
+/download-pcap-files:
+  apitype: pcap
+  url: /v1/pcaps-download/
+  method: post
+  comment: 下载诊断pcap文件
+  download: true
+
+/pcap-chart:
+  apitype: pcap
+  url: /v1/pcap-files/
+  method: get
+  comment: 根据策略获取文件曲线

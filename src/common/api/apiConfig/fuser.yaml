@@ -1,0 +1,202 @@
+# 当前用户信息
+/users/current:
+  apitype: fuser
+  url: /v1/users/current
+
+# 当前用户密码校验
+/users/verify/current_pwd:
+  apitype: fuser
+  method: post
+  url: /v1/users/verify/current_pwd
+
+# 获取所有用户
+/users:
+  apitype: fuser
+  method: get
+  url: /v1/users
+  comment: 获取所有用户
+
+# 获取指定id的用户
+/users/get:
+  apitype: fuser
+  method: get
+  url: /v1/users/<userid>
+  comment: 获取指定id的用户
+
+# 添加用户
+/users/create:
+  apitype: fuser
+  url: /v1/users
+  method: post
+  comment: 添加用户
+
+# 修改用户
+/users/update:
+  apitype: fuser
+  url: /v1/users/<userid>
+  method: patch
+  comment: 修改用户
+
+# 删除用户
+/users/delete:
+  apitype: fuser
+  url: /v1/users/<userid>
+  method: delete
+  comment: 删除用户
+
+# 获取所有用户
+/users/all:
+  apitype: fuser
+  method: get
+  url: /v1/users_all
+  comment: 获取所有用户（管理员和租户以及删除的）
+
+# 获取用户全部自定义数据
+/userDatas:
+  apitype: fuser
+  url: /v1/users/<userId>/datas
+  method: get
+  comment: 获取用户全部自定义数据
+
+# 获取用户某个自定义数据
+/userData:
+  apitype: fuser
+  url: /v1/users/<userId>/datas/<key>
+  method: get
+  comment: 获取用户某个自定义数据
+
+# 保存用户自定义数据
+/userData/post:
+  apitype: fuser
+  url: /v1/users/<userId>/datas
+  method: post
+  comment: 保存用户自定义数据
+
+# 保存用户自定义数据
+/userData/delete:
+  apitype: fuser
+  url: /v1/users/<userId>/datas
+  method: delete
+  comment: 删除用户自定义数据
+
+/tenants:
+  apitype: fuser
+  url: /v1/tenants
+  method: get
+  comment: 获取租户列表
+
+# 获取单个租户
+/tenants/single:
+  apitype: fuser
+  url: /v1/tenants/<userid>
+  method: get
+  comment: 获取单个租户
+
+# 添加租户
+/tenants/create:
+  apitype: fuser
+  url: /v1/tenant
+  method: post
+  comment: 添加租户
+
+# 修改租户
+/tenants/update:
+  apitype: fuser
+  url: /v1/tenant/<userid>
+  method: patch
+  comment: 修改租户
+
+# 删除租户
+/tenants/delete:
+  apitype: fuser
+  url: /v1/tenant/<userid>
+  method: delete
+  comment: 删除租户
+
+/tenants/lock:
+  apitype: fuser
+  url: /v1/user/state/<stateid>
+  method: patch
+  comment: 锁定租户
+
+/tenants/unlock:
+  apitype: fuser
+  url: /v1/user/state/<stateid>
+  method: put
+  comment: 解锁租户
+
+/users/lock:
+  apitype: fuser
+  url: /v1/user/state_admin/<stateid>
+  method: patch
+  comment: 锁定管理员
+
+/users/unlock:
+  apitype: fuser
+  url: /v1/user/state_admin/<stateid>
+  method: put
+  comment: 解锁管理员
+
+/ungrouped:
+  apitype: fuser
+  url: /v1/users/ungrouped
+  method: get
+  comment: 获取未分组用户列表
+
+/sync_ldap_account:
+  apitype: fuser
+  url: /v1/users/syncldapusers
+  method: post
+  comment: 同步LDAP账户
+
+/ungrouped_user_type:
+  apitype: fuser
+  url: /v1/users/ungrouped_user_type/<userid>
+  method: post
+  comment: LDAP账户分组
+
+/tenants/resource/bind:
+  apitype: fuser
+  url: /v1/tenant/bind/<userid>
+  method: patch
+  comment: 绑定授权资源
+
+/tenants/resource/get:
+  apitype: fuser
+  url: /v1/user/bind/<userid>
+  method: get
+  comment: 获取授权资源
+
+  ###############################################################################
+  #
+  # 配置管理接口
+  #
+  ###############################################################################
+
+# 配置管理列表
+/config/list:
+  apitype: fuser
+  url: /v1/user/conf
+  method: get
+  comment: 获取配置管理列表
+
+# 获取可配置项yaml文件
+/config/info:
+  apitype: fuser
+  url: /v1/user/conf/<type>
+  method: get
+  comment: 获取可配置项yaml文件
+
+# 更新web组yaml文件
+/web/config:
+  apitype: fuser
+  url: /v1/user/conf/<type>
+  method: patch
+  comment: 更新web组yaml文件
+
+# 获取不包含自己的所有用户,参数exclude=true
+/allUsers:
+  url: /v1/users_all
+  method: get
+  apitype: fuser
+  comment: 获取不包含自己的所有用户

@@ -1,0 +1,5 @@
+/genesis/switches:
+  apitype: genesis
+  url: /v1/switches
+  method: get
+  comment: 交换机信息

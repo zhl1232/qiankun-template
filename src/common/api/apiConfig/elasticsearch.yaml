@@ -1,0 +1,23 @@
+/es/nbad:
+  url: /nbad_*/_search
+  apitype: es
+  method: post
+  comment: 获取 nbad_* 数据
+
+/es/history:
+  url: /history/_search
+  apitype: es
+  method: post
+  comment: 获取 history 数据
+
+/es/ddos:
+  url: /nbad_*_flood/_search
+  apitype: es
+  method: post
+  comment: 获取nbad_*_ddos数据
+
+/es/log:
+  url: /deepflow_system_log__0_*/_search
+  apitype: es
+  method: post
+  comment: 获取deepflow_system_log__0_*数据

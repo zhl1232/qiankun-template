@@ -1,0 +1,96 @@
+###############################################################################
+#
+# 全景图-流日志
+#
+###############################################################################
+/flowlog/search:
+  apitype: monitor
+  method: post
+  url: /v1/deepflow/flow-logging/Search
+  comment: 流日志采样
+
+/httpflowlog/search:
+  apitype: monitor
+  method: post
+  url: /v1/deepflow/http-logging/Search
+  comment: HTTP流日志采样
+
+/dnsflowlog/search:
+  apitype: monitor
+  method: post
+  url: /v1/deepflow/dns-logging/Search
+  comment: DNS流日志采样
+
+/flowlog/peers/flowStatistics/trend:
+  apitype: monitor
+  url: /v1/deepflow/flow-logging/Distribution
+  method: post
+  comment: 流日志趋势分析
+  tag: CHILD_VIEW
+
+/httpflowlog/peers/flowStatistics/trend:
+  apitype: monitor
+  url: /v1/deepflow/http-logging/Distribution
+  method: post
+  comment: HTTP流日志趋势分析
+  tag: CHILD_VIEW
+
+/dnsflowlog/peers/flowStatistics/trend:
+  apitype: monitor
+  url: /v1/deepflow/dns-logging/Distribution
+  method: post
+  comment: DNS流日志趋势分析
+  tag: CHILD_VIEW
+
+/flowlog/peers/flowStatistics/tableList:
+  apitype: monitor
+  url: /v1/deepflow/flow-logging/DetailList
+  method: post
+  comment: 流日志表格
+  tag: CHILD_VIEW
+
+/httpflowlog/peers/flowStatistics/tableList:
+  apitype: monitor
+  url: /v1/deepflow/http-logging/DetailList
+  method: post
+  comment: HTTP流日志表格
+  tag: CHILD_VIEW
+
+/dnsflowlog/peers/flowStatistics/tableList:
+  apitype: monitor
+  url: /v1/deepflow/dns-logging/DetailList
+  method: post
+  comment: DNS流日志表格
+  tag: CHILD_VIEW
+
+/flowlog/tableList/detail:
+  apitype: monitor
+  url: /v1/deepflow/flow-logging/FlowDetail
+  method: post
+  comment: 获取流日志表格详情
+
+/httpflowlog/tableList/detail:
+  apitype: monitor
+  url: /v1/deepflow/http-logging/FlowDetail
+  method: post
+  comment: HTTP获取流日志表格详情
+
+/dnsflowlog/tableList/detail:
+  apitype: monitor
+  url: /v1/deepflow/dns-logging/FlowDetail
+  method: post
+  comment: DNS获取流日志表格详情
+
+/flowView/ResourceEvent/line:
+  apitype: monitor
+  method: post
+  url: /v1/deepflow/resource-events/History
+  comment: 资源事件折线图
+  tag: CHILD_VIEW
+
+/flowView/ResourceEvent/list:
+  apitype: monitor
+  method: post
+  url: /v1/deepflow/resource-events/DetailList
+  comment: 资源事件列表
+  tag: CHILD_VIEW

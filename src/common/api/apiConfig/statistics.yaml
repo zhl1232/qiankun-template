@@ -1,0 +1,500 @@
+###############################################################################
+#
+# 告警事件
+#
+###############################################################################
+
+/alarm-policy-statistic/create:
+  apitype: statistics
+  url: /v1/deepflow/alarm-policies/
+  method: post
+  comment: 添加全景图告警策略
+
+/alarm-policy-statistic/update:
+  apitype: statistics
+  url: /v1/deepflow/alarm-policies/<lcuuid>/
+  method: patch
+  comment: 修改全景图告警策略
+
+/alarm-policy-statistic/delete:
+  apitype: statistics
+  url: /v1/deepflow/alarm-policies/<lcuuid>/
+  method: delete
+  comment: 删除全景图告警策略
+
+# 获取告警聚合消息
+/alarm-event/statisticHistory:
+  apitype: statistics
+  url: /v1/stats/lake/instance/History
+  method: get
+  comment: 获取告警全景图流量统计实例流量聚合消息
+
+  # 获取告警聚合消息
+/alarm-event/statisticEndHistory:
+  apitype: statistics
+  url: /v1/stats/lake/peers/History
+  method: get
+  comment: 获取告警全景图流量统计端到端聚合消息
+
+###############################################################################
+#
+# 分发流量
+#
+###############################################################################
+
+/npb-policies/policy-usage-history:
+  apitype: statistics
+  url: /v1/stats/lake/npb/PolicyUsageHistory
+  method: get
+  comment: 获取分发策略流量
+
+/npb-tunnels/tunnel-usage-history:
+  apitype: statistics
+  url: /v1/stats/lake/npb/TunnelUsageHistory
+  method: get
+  comment: 获取分发点流量
+
+###############################################################################
+#
+# 全景图-资源拓扑 Api
+#
+###############################################################################
+
+# @description:获取vpc，子网，云服务器的总流量
+/sum_bytes:
+  url: /v1/stats/lake/instance/Statistics
+  method: get
+  apitype: statistics
+  comment: 获取总流量
+
+# @description: pcap流量
+/pcap-policy/pcap-usage-history:
+  apitype: statistics
+  url: /v1/stats/lake/pcap/PolicyUsageHistory
+  method: get
+  comment: 获取pcap流量
+
+###############################################################################
+#
+# 全景图-实例流量统计
+#
+###############################################################################
+
+/flow/instance/flowStatistics/bar:
+  apitype: statistics
+  url: /v1/stats/lake/instance/Distribution
+  method: post
+  comment: 实例流量统计柱状图
+  tag: CHILD_VIEW
+
+/flow/instance/flowStatistics/pie:
+  apitype: statistics
+  url: /v1/stats/lake/instance/Distribution
+  method: post
+  comment: 实例流量统计饼图
+  tag: CHILD_VIEW
+
+/flow/instance/flowStatistics/tableList:
+  apitype: statistics
+  url: /v1/stats/lake/instance/DetailList
+  method: post
+  comment: 实例流量统计列表详情
+  tag: CHILD_VIEW
+
+/flow/instance/flowStatistics/line:
+  apitype: statistics
+  url: /v1/stats/lake/instance/History
+  method: post
+  comment: 流量统计线图
+  tag: CHILD_VIEW
+
+/flow/peers/flowStatistics/topo:
+  url: /v1/stats/lake/topo/Distribution
+  apitype: statistics
+  method: post
+  comment: 获取流统计拓扑图信息
+  tag: CHILD_VIEW
+
+/packet/peers/flowStatistics/topo:
+  url: /v1/stats/lake/packet_topo/Distribution
+  apitype: statistics
+  method: post
+  comment: 获取包统计拓扑图信息
+  tag: CHILD_VIEW
+###############################################################################
+#
+# 全景图-端到端流量统计
+#
+###############################################################################
+/flow/peers/flowStatistics/trend:
+  apitype: statistics
+  method: post
+  url: /v1/stats/lake/instance/Trend
+  comment: 流统计-趋势分析
+  tag: CHILD_VIEW
+
+/flow/peers/flowStatistics/bar:
+  apitype: statistics
+  url: /v1/stats/lake/peers/Distribution
+  method: post
+  comment: 端到端流量统计柱状图
+  tag: CHILD_VIEW
+
+/flow/peers/flowStatistics/pie:
+  apitype: statistics
+  url: /v1/stats/lake/peers/Distribution
+  method: post
+  comment: 端到端流量统计柱饼图
+  tag: CHILD_VIEW
+
+/flow/peers/flowStatistics/tableList:
+  apitype: statistics
+  method: post
+  url: /v1/stats/lake/peers/DetailList
+  comment: 端到端流量统计列表详情
+  tag: CHILD_VIEW
+
+/flow/peers/flowStatistics/line:
+  apitype: statistics
+  method: post
+  url: /v1/stats/lake/peers/History
+  comment: 端到端流量统计线图
+  tag: CHILD_VIEW
+###############################################################################
+#
+# 全景图-资源包统计
+#
+###############################################################################
+
+/packet/peers/flowStatistics/trend:
+  apitype: statistics
+  method: post
+  url: /v1/stats/lake/packet/Trend
+  comment: 包统计趋势分析图
+  tag: CHILD_VIEW
+
+/packet/instance/flowStatistics/bar:
+  apitype: statistics
+  method: post
+  url: /v1/stats/lake/packet/Distribution
+  comment: TCP FLAG流量统计柱状图
+  tag: CHILD_VIEW
+
+/packet/instance/flowStatistics/pie:
+  apitype: statistics
+  method: post
+  url: /v1/stats/lake/packet/Distribution
+  comment: TCP FLAG流量统计饼图
+  tag: CHILD_VIEW
+
+/packet/instance/flowStatistics/tableList:
+  apitype: statistics
+  method: post
+  url: /v1/stats/lake/packet/DetailList
+  comment: TCP FLAG流量统计列表详情
+  tag: CHILD_VIEW
+
+/packet/instance/flowStatistics/line:
+  apitype: statistics
+  method: post
+  url: /v1/stats/lake/packet/History/
+  comment: TCP FLAG流量统计线图
+  tag: CHILD_VIEW
+
+/packet/peers/flowStatistics/bar:
+  apitype: statistics
+  method: post
+  url: /v1/stats/lake/packet_peers/Distribution
+  comment: 包流量统计双端柱状图
+  tag: CHILD_VIEW
+
+/packet/peers/flowStatistics/pie:
+  apitype: statistics
+  method: post
+  url: /v1/stats/lake/packet_peers/Distribution
+  comment: 包流量统计双端饼图
+  tag: CHILD_VIEW
+
+/packet/peers/flowStatistics/tableList:
+  apitype: statistics
+  method: post
+  url: /v1/stats/lake/packet_peers/DetailList
+  comment: 包流量统计双端列表详情
+  tag: CHILD_VIEW
+
+/packet/peers/flowStatistics/line:
+  apitype: statistics
+  method: post
+  url: /v1/stats/lake/packet_peers/History/
+  comment: 包流量统计双端线图
+  tag: CHILD_VIEW
+###############################################################################
+#
+# 全景图-广域网流量统计
+#
+###############################################################################
+
+/wan/geo/flowStatistics/trend:
+  apitype: statistics
+  url: /v1/stats/lake/geo/Trend
+  method: post
+  comment: 广域网-趋势分析图
+  tag: CHILD_VIEW
+
+/wan/geo/flowStatistics/bar:
+  apitype: statistics
+  url: /v1/stats/lake/geo/Distribution
+  method: post
+  comment: 广域网流量统计柱状图
+  tag: CHILD_VIEW
+
+/wan/geo/flowStatistics/pie:
+  apitype: statistics
+  url: /v1/stats/lake/geo/Distribution
+  method: post
+  comment: 广域网流量统计饼图
+  tag: CHILD_VIEW
+
+/wan/geo/flowStatistics/tableList:
+  apitype: statistics
+  url: /v1/stats/lake/geo/DetailList
+  method: post
+  comment: 广域网流量统计列表详情
+  tag: CHILD_VIEW
+
+/wan/geo/flowStatistics/line:
+  apitype: statistics
+  url: /v1/stats/lake/geo/History
+  method: post
+  comment: 流量统计线图
+  tag: CHILD_VIEW
+
+/wan/geo/flowStatistics/chinaMap:
+  apitype: statistics
+  url: /v1/stats/lake/geo/Map
+  method: post
+  comment: 流量统计访客地图
+  tag: CHILD_VIEW
+
+###############################################################################
+#
+# 全景图-资源盘点
+#
+###############################################################################
+/flow/resourceUsage/flowStatistics/tableList:
+  apitype: statistics
+  method: post
+  url: /v1/stats/lake/resource/DetailList
+  comment: 资源盘点列表
+  tag: CHILD_VIEW
+
+/flow/resourceUsage/flowStatistics/line:
+  apitype: statistics
+  url: /v1/stats/lake/instance/History
+  method: post
+  comment: 流量统计线图
+  tag: CHILD_VIEW
+
+###############################################################################
+#
+# 获取指标量
+#
+###############################################################################
+## 子视图提示 api
+/metrics:
+  url: /v1/stats/lake/metric-descriptions/
+  apitype: statistics
+  method: get
+  comment: 获取指标量
+  tag: CHILD_VIEW
+  
+###############################################################################
+#
+# 全景图-物理链路拓扑
+#
+###############################################################################
+
+/instance/flowStatistics/physicalTopo:
+  apitype: statistics
+  url: /v1/stats/lake/instance/LinkDistribution
+  method: post
+  comment: 物理链路实例流量拓扑
+
+/packet/flowStatistics/physicalTopo:
+  apitype: statistics
+  method: post
+  url: /v1/stats/lake/packet/LinkDistribution
+  comment: 物理链路资源包统计拓扑
+
+/peers/flowStatistics/physicalTopo:
+  apitype: statistics
+  url: /v1/stats/lake/peers/LinkDistribution
+  method: post
+  comment: 物理链路双端流量拓扑
+
+/geo/flowStatistics/physicalTopo:
+  apitype: statistics
+  method: post
+  url: /v1/stats/lake/geo/LinkDistribution
+  comment: 物理链路广域网拓扑
+
+/instance/flowStatistics/LinkDetail:
+  apitype: statistics
+  url: /v1/stats/lake/instance/LinkDetailList
+  method: post
+  comment: 物理链路实例流量列表
+
+/packet/flowStatistics/LinkDetail:
+  apitype: statistics
+  method: post
+  url: /v1/stats/lake/packet/LinkDetailList
+  comment: 物理链路资源包统计列表
+
+/peers/flowStatistics/LinkDetail:
+  apitype: statistics
+  url: /v1/stats/lake/peers/LinkDetailList
+  method: post
+  comment: 物理链路双端流量列表
+
+/geo/flowStatistics/LinkDetail:
+  apitype: statistics
+  method: post
+  url: /v1/stats/lake/geo/LinkDetailList
+  comment: 链路拓扑广域网列表
+
+###############################################################################
+#
+# 全景图-云服务器-流量拓扑(可能已弃用)
+#
+###############################################################################
+
+/flowTopo/statistics:
+  apitype: statistics
+  url: /v1/stats/lake/topo/InstanceCircleList/
+  method: get
+  comment: 获取Top-50 vpc,subnet.vm,host的统计信息
+
+/flowTopo/reference:
+  apitype: statistics
+  url: /v1/stats/lake/topo/InstanceCircleConnections
+  method: get
+  comment: 获取vpc间,subnet间,vm间,host间的统计信息
+
+/flowTopo/DetailList:
+  apitype: statistics
+  url: /v1/stats/lake/topo/DetailList
+  method: post
+  comment: 获取资源间的详细信息
+
+/flowTopo/instance/flowStatistics/tableList:
+  apitype: statistics
+  url: /v1/stats/lake/topo/InstanceTableList
+  method: get
+  comment: 获取实例表格
+
+/flowTopo/peer/flowStatistics/tableList:
+  apitype: statistics
+  url: /v1/stats/lake/topo/PeersTableList
+  method: get
+  comment: 获取端到端表格
+
+###############################################################################
+#
+# 全景图 容器-流量拓扑(可能已弃用)
+#
+###############################################################################
+
+/flowTopo/docker/statistics:
+  apitype: statistics
+  url: /v1/stats/lake/pod/topo/InstanceCircleList/
+  method: get
+  comment: 获取Top-50 vpc,subnet.vm,host的统计信息
+
+/flowTopo/docker/reference:
+  apitype: statistics
+  url: /v1/stats/lake/pod/topo/InstanceCircleConnections
+  method: get
+  comment: 获取vpc间,subnet间,vm间,host间的统计信息
+
+/flowTopo/docker/DetailList:
+  apitype: statistics
+  url: /v1/stats/lake/pod/topo/DetailList
+  method: post
+  comment: 获取资源间的详细信息
+
+/flowTopo/instance/flowStatistics/docker/tableList:
+  apitype: statistics
+  url: /v1/stats/lake/pod/topo/InstanceTableList
+  method: get
+  comment: 获取实例表格
+
+/flowTopo/peer/flowStatistics/docker/tableList:
+  apitype: statistics
+  url: /v1/stats/lake/pod/topo/PeersTableList
+  method: get
+  comment: 获取端到端表格
+
+/flowTopo/peer/docker/detailList:
+  apitype: statistics
+  url: /v1/stats/lake/pod/peers/DetailsList
+  method: get
+  comment: 获取连线的信息
+
+###############################################################################
+#
+# 全景图-拓扑图
+#
+###############################################################################
+
+/topo/distribution:
+  url: /v1/stats/lake/topo/Distribution
+  apitype: statistics
+  method: post
+  comment: 获取拓扑图信息
+  tag: CHILD_VIEW
+
+/packettopo/distribution:
+  url: /v1/stats/lake/packet_topo/Distribution
+  apitype: statistics
+  method: post
+  comment: 获取拓扑图信息
+  tag: CHILD_VIEW
+
+/flowTopo/flowStatistics/line:
+  apitype: statistics
+  method: post
+  url: /v1/stats/lake/peers/History
+  comment: 流量拓扑流量统计线图
+
+/flowTopo/virtualLink:
+  url: /v1/stats/lake/peers/LinkDistribution
+  apitype: statistics
+  method: post
+  comment: 获取虚拟网络链路信息
+
+###############################################################################
+#
+# 全景图-日志聚合以及日志曲线
+#
+###############################################################################
+
+/flowlogAgg/peers/flowStatistics/bar:
+  apitype: statistics
+  url: /v1/stats/lake/flow_peers/Distribution
+  method: post
+  comment: 日志聚合柱状图
+  tag: CHILD_VIEW
+
+/flowlogAgg/peers/flowStatistics/tableList:
+  apitype: statistics
+  method: post
+  url: /v1/stats/lake/flow_peers/DetailList
+  comment: 日志聚合统计列表详情
+  tag: CHILD_VIEW
+
+/flowlogLine/peers/flowStatistics/line:
+  apitype: statistics
+  url: /v1/stats/lake/flow_peers/History
+  method: post
+  comment: 日志曲线图
+  tag: CHILD_VIEW

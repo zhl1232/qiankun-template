@@ -1,0 +1,267 @@
+# 分析 用量
+/analysis/usage:
+  apitype: analysis
+  url: /v1/stats/lake/usage/UsageHistory/
+  method: get
+  comment: 分析-用量-usagehistory
+
+# 分析 用量
+/analysis/flow:
+  apitype: analysis
+  url: /v1/stats/lake/usage/FlowHistory/
+  method: get
+  comment: 分析-用量-flowhistory
+
+# 分析 用量
+/analysis/bitProto:
+  apitype: analysis
+  url: /v1/stats/lake/usage/BitProtoDistribution/
+  method: get
+  comment: 分析-用量-bitprotodistribution
+
+# 分析 用量
+/analysis/flowIp:
+  apitype: analysis
+  url: /v1/stats/lake/usage/FlowIpDistribution/
+  method: get
+  comment: 分析-用量-bitprotodistribution
+
+# 分析 用量
+/analysis/flowProto:
+  apitype: analysis
+  url: /v1/stats/lake/usage/FlowProtoDistribution/
+  method: get
+  comment: 分析-用量-flowprotodistribution
+
+# 分析 用量
+/analysis/bitIp:
+  apitype: analysis
+  url: /v1/stats/lake/usage/BitIpDistribution/
+  method: get
+  comment: 分析-用量-bitipdistribution
+
+# 分析 用量
+/analysis/ipDistribution:
+  apitype: analysis
+  url: /v1/stats/lake/usage/IpDistributionDetail/
+  method: get
+  comment: 分析-用量-流量top100
+
+# 分析 用量
+/analysis/bitDistribution:
+  apitype: analysis
+  url: /v1/stats/lake/usage/BitDistribution/
+  method: get
+  comment: 出入流量分布图
+
+# 分析 用量
+/analysis/portDistribution:
+  apitype: analysis
+  url: /v1/stats/lake/usage/ProtoPortDistribution/
+  method: get
+  comment: 端口流量分布图
+
+# 分析 用量
+/analysis/IspDistribution:
+  apitype: analysis
+  url: /v1/stats/lake/usage/IspDistribution/
+  method: get
+  comment: 运营商流量分布
+
+# 分析 用量
+/analysis/RegionDistribution:
+  apitype: analysis
+  url: /v1/stats/lake/usage/RegionDistribution/
+  method: get
+  comment: 中国访问者地图
+
+# 分析 用量
+/analysis/CountryDistribution:
+  apitype: analysis
+  url: /v1/stats/lake/usage/CountryDistribution/
+  method: get
+  comment: 世界访问者地图
+
+# 分析 用量
+/analysis/BitStatistics:
+  apitype: analysis
+  url: /v1/stats/lake/usage/BitStatistics/
+  method: get
+  comment: 流量统计(出入)
+
+/business/GroupFlowTopo:
+  apitype: analysis
+  url: /v1/stats/lake/flow_topo/GroupFlowTopo/
+  method: get
+  comment: 【业务画像】资源组拓扑
+
+/business/IpFlowTopo:
+  apitype: analysis
+  url: /v1/stats/lake/flow_topo/IpFlowTopo/
+  method: get
+  comment: 【业务画像】IP拓扑
+
+/business/IpPathDistribution:
+  apitype: analysis
+  url: /v1/stats/lake/business_statistics/IpPathDistribution/
+  method: get
+  comment: 【业务画像】ip流量查询
+
+/business/ResourceGroupPathDistribution:
+  apitype: analysis
+  url: /v1/stats/lake/business_statistics/ResourceGroupPathDistribution/
+  method: get
+  comment: 【业务画像】服务依赖流量查询
+
+/business/UndefinedResourceGroupPathDistribution:
+  apitype: analysis
+  url: /v1/stats/lake/business_statistics/UndefinedResourceGroupPathDistribution/
+  method: get
+  comment: 【业务画像】服务依赖外流量查询
+
+/configurations/analysis:
+  apitype: analysis
+  url: /v1/deepflow/configurations/
+  method: get
+  comment: 获取配置
+
+/analysis/usageTop:
+  apitype: analysis
+  url: /v1/stats/lake/business_summary/UsageDistribution
+  method: post
+  comment: 流量top
+
+/analysis/usageMaxTop:
+  apitype: analysis
+  url: /v1/stats/lake/business_summary/UsageMaxDistribution
+  method: post
+  comment: 峰值top
+
+/analysis/flowTop:
+  apitype: analysis
+  url: /v1/stats/lake/business_summary/FlowDistribution
+  method: post
+  comment: flow数top
+
+/analysis/UsageHistory:
+  apitype: analysis
+  url: /v1/stats/lake/business_summary/UsageHistory
+  method: post
+  comment: 摘要流量折线图
+
+/analysis/UsageMaxHistory:
+  apitype: analysis
+  url: /v1/stats/lake/business_summary/UsageMaxHistory
+  method: post
+  comment: 摘要峰值折线图
+
+/analysis/FlowHistory:
+  apitype: analysis
+  url: /v1/stats/lake/business_summary/FlowHistory
+  method: post
+  comment:
+
+# 获取路径监控列表
+/analysis/ServiceDistributionDetail:
+  apitype: analysis
+  url: /v1/stats/lake/usage/ServiceDistributionDetail/
+  method: get
+  comment: 获取路径监控列表
+
+  # 获取路径监控列表
+/analysis/BusinessDistributionDetail:
+  apitype: analysis
+  url: /v1/stats/lake/business_summary/BusinessDistributionDetail/
+  method: post
+  comment: 获取业务监控列表
+
+# 获取资源组监控列表
+/analysis/ResourceDistributionDetail:
+  apitype: analysis
+  url: /v1/stats/lake/resource/ResourceDistributionDetail/
+  method: get
+  comment: 获取资源组监控列表
+
+# 获取告警聚合消息
+/alarm-event/usageHistory:
+  apitype: analysis
+  url: /v1/stats/lake/usage/UsageHistory/
+  method: get
+  comment: 获取告警聚合消息
+
+# 获取告警聚合消息
+/alarm-event/flowHistory:
+  apitype: analysis
+  url: /v1/stats/lake/usage/FlowHistory/
+  method: get
+  comment: 获取告警聚合消息
+
+# 获取告警聚合消息
+/alarm-event/perfHistory:
+  apitype: analysis
+  url: /v1/stats/lake/usage/IpPerfHistory/
+  method: get
+  comment: 获取告警聚合消息
+
+  # 添加报表策略
+/reportStrategy/create:
+  apitype: report
+  url: /v1/deepflow/report-policies/
+  method: post
+  comment: 添加报表策略
+
+# 修改报表策略
+/reportStrategy/update:
+  apitype: report
+  url: /v1/deepflow/report-policies/<lcuuid>/
+  method: patch
+  comment: 修改报表策略
+
+# 删除报表策略
+/reportStrategy/delete:
+  apitype: report
+  url: /v1/deepflow/report-policies/<lcuuid>/
+  method: delete
+  comment: 删除报表策略
+
+/discover/topo/business:
+  apitype: analysis
+  url: /v1/stats/lake/business_discovery/DiscoveryTopoStatistics/
+  method: get
+  comment: 服务发现拓扑-业务
+
+/discover/topo:
+  apitype: analysis
+  url: /v1/stats/lake/business_discovery/DiscoveryStatistics/
+  method: get
+  comment: 服务发现拓扑-vpc子网
+
+/discover/distribution/ip:
+  apitype: analysis
+  url: /v1/stats/lake/business_discovery/IpDistributionTop/
+  method: get
+  comment: 服务端IP流量
+
+/discover/distribution/port:
+  apitype: analysis
+  url: /v1/stats/lake/business_discovery/PortDistributionTop/
+  method: get
+  comment: 服务端实时流量
+
+/discover/distribution/undefined/service:
+  apitype: analysis
+  url: /v1/stats/lake/business_discovery/NotMatchServiceDistributionTop/
+  method: get
+  comment: 未匹配服务依赖流量
+
+/discover/distribution/service:
+  apitype: analysis
+  url: /v1/stats/lake/business_discovery/ServiceDistributionTop/
+  method: get
+  comment: 未匹配服务依赖流量
+
+/discover/distribution/ipDetail:
+  apitype: analysis
+  url: /v1/stats/lake/business_discovery/IpPathDistributionTop/
+  method: get
+  comment: IP流量详情

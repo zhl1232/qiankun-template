@@ -1,0 +1,11 @@
+/resource/statistic:
+  apitype: resource
+  url: /v1/stats/resource-statistics/
+  method: post
+  comment: 资源使用列表
+
+/resource/statistic/detail:
+  apitype: resource
+  url: /v1/stats/resource-statistics-detail/
+  method: post
+  comment: 资源使用详情
