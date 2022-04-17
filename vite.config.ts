@@ -16,8 +16,6 @@ export default defineConfig({
     }
   },
   plugins: [
-    vue(),
-    WindiCSS(),
     AutoImport({
       // vue函数的自动导入
       imports: ["vue", "vue-router", "pinia", "@vueuse/core"],
@@ -26,6 +24,8 @@ export default defineConfig({
         filepath: "./.eslintrc-auto-import.json", // Default `./.eslintrc-auto-import.json`
         globalsPropValue: true // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
       }
-    })
+    }),
+    vue(),
+    WindiCSS()
   ]
 })

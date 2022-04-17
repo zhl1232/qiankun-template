@@ -3,16 +3,17 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "dev": "pnpm -r --filter ./packages --parallel run dev",
+    "build": "pnpm -r --filter ./packages --parallel run build",
+    "preview": "pnpm -r --filter ./packages --parallel run preview",
+    "clean": "rm -rf node_modules **/*/node_modules"
   },
   "dependencies": {
     "@ant-design/icons-vue": "^6.1.0",
     "@vueuse/core": "^8.2.5",
     "ant-design-vue": "^3.1.1",
-    "lodash-es": "^4.17.21",
     "pinia": "^2.0.13",
+    "qiankun": "^2.7.0",
     "vue": "^3.2.31",
     "vue-router": "^4.0.14"
   },
