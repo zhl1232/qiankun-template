@@ -1,4 +1,4 @@
-import { defineConfig, loadConfigFromFile, mergeConfig } from "vite"
+import { defineConfig, loadConfigFromFile, mergeConfig, UserConfigExport } from "vite"
 import AutoImport from "unplugin-auto-import/vite"
 import packageConfig from "./package.json"
 import qiankun from "vite-plugin-qiankun"
@@ -13,7 +13,7 @@ const useDevMode = true // 如果是在主应用中加载子应用 vite, 必须�
 export default defineConfig(async ({ command, mode }) => {
   const base = (await loadConfigFromFile({ command, mode }, pathResolve("../../vite.config.ts"))).config
   base.plugins.shift()
-  const config = {
+  const config: UserConfigExport = {
     resolve: {
       alias: {
         "@": pathResolve("src"),
@@ -28,13 +28,7 @@ export default defineConfig(async ({ command, mode }) => {
         imports: ["vue", "vue-router", "pinia", "@vueuse/core"],
         dts: false
       })
-    ],
-    output: {
-      // 把子应用打包成 umd 库格式
-      library: `${packageConfig.name}-[name]`,
-      libraryTarget: "umd",
-      jsonpFunction: `webpackJsonp_${packageConfig.name}`
-    }
+    ]
   }
   return mergeConfig(base, config)
 })

@@ -33,38 +33,7 @@ module.exports = defineConfig({
     $$: "readonly",
     $ref: "readonly",
     $shallowRef: "readonly",
-    $computed: "readonly",
-
-    // index.d.ts
-    // global.d.ts
-    Fn: "readonly",
-    PromiseFn: "readonly",
-    RefType: "readonly",
-    LabelValueOptions: "readonly",
-    EmitType: "readonly",
-    TargetContext: "readonly",
-    ComponentElRef: "readonly",
-    ComponentRef: "readonly",
-    ElRef: "readonly",
-    global: "readonly",
-    ComponentRoutes: "readonly",
-
-    // script setup
-    defineProps: "readonly",
-    defineEmits: "readonly",
-    defineExpose: "readonly",
-    withDefaults: "readonly",
-    useSlots: "readonly",
-    useRouter: "readonly",
-    useAttrs: "readonly",
-    useRoute: "readonly",
-
-    // VueUse
-    useDebounceFn: "readonly",
-    useResizeObserver: "readonly",
-    useClipboard: "readonly",
-    useVModel: "readonly",
-    useFetch: "readonly"
+    $computed: "readonly"
   },
   rules: {
     /**

@@ -1,1 +1,0 @@
-export const GLOBAL_CANCEL_SOURCE_NAME = '__xhr_cancel_source__'

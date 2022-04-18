@@ -8,18 +8,18 @@ type microApp = {
 
 const apps: microApp[] = [
   {
-    name: "app1",
-    entry: "//localhost:10001",
-    container: "#view-main",
-    activeRule: "/app1",
-    port: "10001"
+    "name": "app1",
+    "entry": "//localhost:10001",
+    "container": "#view-main",
+    "activeRule": "/app1",
+    "port": "10001"
   },
   {
-    name: "app2",
-    entry: "//localhost:10002",
-    container: "#view-main",
-    activeRule: "/app2",
-    port: "10002"
+    "name": "app2",
+    "entry": "//localhost:10002",
+    "container": "#view-main",
+    "activeRule": "/app2",
+    "port": "10002"
   }
-]
-export default apps
+] 
+ export default apps
